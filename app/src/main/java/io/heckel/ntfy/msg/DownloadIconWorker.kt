@@ -157,8 +157,8 @@ class DownloadIconWorker(private val context: Context, params: WorkerParameters)
     companion object {
         const val INPUT_DATA_ID = "id"
         const val FILE_PROVIDER_AUTHORITY = BuildConfig.APPLICATION_ID + ".provider" // See AndroidManifest.xml
-        const val DEFAULT_MAX_ICON_DOWNLOAD_BYTES = 307_200L // 300 KB
-        const val MAX_ICON_DOWNLOAD_BYTES = 5_242_880L // 5 MB
+        const val DEFAULT_MAX_ICON_DOWNLOAD_BYTES = 3145728L // 3 MiB
+        const val MAX_ICON_DOWNLOAD_BYTES = 15728640L // 15 MB
         const val MAX_CACHE_MILLIS = 1000*60*60*24 // 24 hours
         const val ICON_CACHE_DIR = "icons"
 
