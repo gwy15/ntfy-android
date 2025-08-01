@@ -31,11 +31,21 @@ android {
         }
     }
 
+    // keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+    signingConfigs {
+        release {
+            storeFile file("../my-release-key.keystore") // 确认文件路径正确
+            storePassword "123456"
+            keyAlias "alias_name"
+            keyPassword "123456"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled true
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release // 确认使用了正确的签名配置
         }
         debug {
             minifyEnabled false
